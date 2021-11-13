@@ -7,8 +7,10 @@ import framework.request.Request;
 import framework.request.enums.HttpMethod;
 import framework.request.exceptions.RequestNotValidException;
 import framework.response.JsonResponse;
+import framework.response.Response;
 
 import java.io.*;
+import java.lang.reflect.InvocationTargetException;
 import java.net.Socket;
 import java.util.HashMap;
 
@@ -54,15 +56,15 @@ public class ServerThread implements Runnable {
 //            responseMap.put("parameters", request.getParameters());
 //            Response response = new JsonResponse(responseMap);
 
-
-            JsonResponse response = Router.getInstance().processRequest(request);
-            out.println(response.render());
+            Response response = Router.getInstance().processRequest(request);
+            if(response != null)
+                out.println(response.render());
 
             in.close();
             out.close();
             socket.close();
 
-        } catch (IOException | RequestNotValidException e) {
+        } catch (IOException | RequestNotValidException | InvocationTargetException | IllegalAccessException e) {
             e.printStackTrace();
         }
     }

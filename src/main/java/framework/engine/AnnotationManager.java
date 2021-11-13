@@ -33,7 +33,8 @@ public class AnnotationManager {
     }
 
     private void processClass(Class cl) throws NoSuchMethodException, IllegalAccessException, InvocationTargetException, InstantiationException {
-        if (!cl.isInterface() && cl.isEnum()) {
+       // System.out.println(cl.getName() + " " + cl.getTypeName());
+        if (!cl.isInterface() && !cl.isEnum()) {
             if(cl.isAnnotationPresent(Controller.class)){
                 engine.addControllerClass(cl);                                              // todo possibly return instead
                 Object instance = cl.getDeclaredConstructor().newInstance();

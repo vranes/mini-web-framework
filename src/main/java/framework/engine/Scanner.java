@@ -47,7 +47,6 @@ public class Scanner {
                     if (name.endsWith(".java")){
                         return true;
                     }
-
                     else {
                         File f = new File(dir + "/" + name);
                         if (f.isDirectory()) {
@@ -65,9 +64,7 @@ public class Scanner {
 
     private Class getClass(String dirName, File javaFile) throws IOException, ClassNotFoundException {
         String className = toQualifiedName(dirName, javaFile);
-        System.out.println(className);
         Class cl = Class.forName(className);
-
         return cl;
     }
 

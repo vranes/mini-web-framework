@@ -2,27 +2,20 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5bb94221-2754-4db2-8b15-3273514ffc69" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/framework/engine/AnnotationManager.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/framework/engine/Engine.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/framework/engine/Router.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/framework/request/Header.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/framework/request/Helper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/framework/request/Request.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/framework/request/enums/HttpMethod.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/framework/request/exceptions/RequestNotValidException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/framework/response/JsonResponse.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/framework/response/RedirectResponse.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/framework/response/Response.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/framework/server/Server.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/framework/server/ServerThread.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/runner/Runner.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/testApp/TestController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/annotations/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/framework/annotations/Controller.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/annotations/http/Get.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/framework/annotations/http/Get.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/annotations/http/Path.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/framework/annotations/http/Path.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/annotations/http/Post.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/framework/annotations/http/Post.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/scanner/Scanner.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/framework/engine/Scanner.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/framework/engine/AnnotationManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/framework/engine/AnnotationManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/framework/engine/Router.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/framework/engine/Router.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/framework/engine/Scanner.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/framework/engine/Scanner.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/framework/server/Server.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/framework/server/Server.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/framework/server/ServerThread.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/framework/server/ServerThread.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/runner/Runner.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/annotations/Controller.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/annotations/http/Get.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/annotations/http/Path.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/annotations/http/Post.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/scanner/Scanner$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/scanner/Scanner.class" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -59,7 +52,7 @@
       <recent name="C:\Users\vrane\OneDrive\Documents\RAF\Projekti\mini-web-framework\src\main\java" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Application.Server">
     <configuration name="Scanner" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="framework.Engine.Scanner" />
       <module name="mini-web-framework" />
@@ -73,8 +66,22 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="Server" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="framework.server.Server" />
+      <module name="mini-web-framework" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="framework.server.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Server" />
         <item itemvalue="Application.Scanner" />
       </list>
     </recent_temporary>
@@ -92,7 +99,7 @@
       <workItem from="1636287818761" duration="1798000" />
       <workItem from="1636458448869" duration="3000" />
       <workItem from="1636458528717" duration="26284000" />
-      <workItem from="1636816009684" duration="2978000" />
+      <workItem from="1636816009684" duration="7073000" />
     </task>
     <servers />
   </component>
@@ -112,22 +119,22 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="793" y="280" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1636288780560" />
-    <state width="1878" height="314" key="GridCell.Tab.0.bottom" timestamp="1636584756812">
+    <state width="1878" height="314" key="GridCell.Tab.0.bottom" timestamp="1636828262553">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1878" height="314" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1636584756812" />
-    <state width="1878" height="314" key="GridCell.Tab.0.center" timestamp="1636584756812">
+    <state width="1878" height="314" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1636828262553" />
+    <state width="1878" height="314" key="GridCell.Tab.0.center" timestamp="1636828262553">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1878" height="314" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1636584756812" />
-    <state width="1878" height="314" key="GridCell.Tab.0.left" timestamp="1636584756812">
+    <state width="1878" height="314" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1636828262553" />
+    <state width="1878" height="314" key="GridCell.Tab.0.left" timestamp="1636828262553">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1878" height="314" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1636584756812" />
-    <state width="1878" height="314" key="GridCell.Tab.0.right" timestamp="1636584756812">
+    <state width="1878" height="314" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1636828262553" />
+    <state width="1878" height="314" key="GridCell.Tab.0.right" timestamp="1636828262553">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1878" height="314" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1636584756812" />
+    <state width="1878" height="314" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1636828262553" />
     <state x="623" y="226" width="670" height="58" key="search.everywhere.popup" timestamp="1636490083073">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
