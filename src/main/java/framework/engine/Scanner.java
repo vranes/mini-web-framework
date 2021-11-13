@@ -1,24 +1,36 @@
-package scanner;
-
-import annotations.Controller;
-import annotations.http.Get;
-import annotations.http.Path;
-import annotations.http.Post;
+package framework.engine;
 
 import java.io.File;
 import java.io.FilenameFilter;
 import java.io.IOException;
-import java.lang.reflect.Method;
-import java.net.URL;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Stack;
 
 public class Scanner {
 
-    public static void main(String[] args) throws IOException {
-        Scanner scanner = new Scanner();
-        scanner.scan();
+    private static Scanner instance = null;
+
+    public static Scanner getInstance(){
+        if (instance == null){
+            instance = new Scanner();
+        }
+
+        return instance;
+    }
+
+
+    public ArrayList<Class> scan() throws IOException, ClassNotFoundException {
+        File javaDir = new File("src/main/java");
+
+        ArrayList<File> files = listJavaFiles(javaDir);
+        ArrayList<Class> classes = new ArrayList<>();
+
+        // list all *.java files
+        for (File f: files){
+            classes.add(getClass(javaDir.getCanonicalPath(), f));
+        }
+        return classes;
     }
 
 
@@ -50,45 +62,15 @@ public class Scanner {
         return fileList;
     }
 
-    private void scan() throws IOException {
-        File javaDir = new File("src/main/java");
 
-        ArrayList<File> files = listJavaFiles(javaDir);
-
-        // list all *.java files
-        for (int i = 0; i < files.size(); i++){
-            try {
-                processClass(javaDir.getCanonicalPath(), files.get(i));
-               // System.out.println("Found java file: " + files.get(i).getCanonicalPath());
-
-            } catch (Exception e) {
-                e.printStackTrace();
-            }
-        }
-    }
-
-    private void processClass(String dirName, File javaFile) throws IOException, ClassNotFoundException {
+    private Class getClass(String dirName, File javaFile) throws IOException, ClassNotFoundException {
         String className = toQualifiedName(dirName, javaFile);
         System.out.println(className);
         Class cl = Class.forName(className);
-        if(cl.getAnnotation(Controller.class) != null){
-            processMethods(cl);
-            // TODO instantiate and process methods
-        }
+
+        return cl;
     }
 
-    private void processMethods(Class cl){
-        for (Method m: cl.getDeclaredMethods()){
-            Path path = m.getAnnotation(Path.class);
-            if (path != null){
-                Get g = m.getAnnotation(Get.class);
-                Post p = m.getAnnotation(Post.class);
-                if (g == null || p == null)
-                    continue;
-                // TODO
-            }
-        }
-    }
 
     private String toQualifiedName(String dirName, File javaFile) throws IOException {
         String fileName = javaFile.getCanonicalPath().replace(dirName + "\\", "");
