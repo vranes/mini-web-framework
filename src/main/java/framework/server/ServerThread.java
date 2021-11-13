@@ -89,7 +89,7 @@ public class ServerThread implements Runnable {
             }
         } while(!command.trim().equals(""));
 
-        if(method.equals(HttpMethod.POST)) {
+        if(method.equals(HttpMethod.POST) && header.get("content-length") != null) {
             int contentLength = Integer.parseInt(header.get("content-length"));
             char[] buff = new char[contentLength];
             in.read(buff, 0, contentLength);

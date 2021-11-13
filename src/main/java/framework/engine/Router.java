@@ -25,14 +25,15 @@ public class Router {
     }
 
     public Response processRequest(Request request) throws InvocationTargetException, IllegalAccessException {
-//        Map<String, Object> responseMap = new HashMap<>();
-//        return new JsonResponse(responseMap);
         if (request.getLocation().endsWith("favicon.ico"))
             return null;
 
-        System.out.println(request.getLocation() + request.getMethod());
-        Method m = routes.get(request.getLocation() + request.getMethod());
+        String path = request.getLocation();
+        int params = path.indexOf('?');
+        if (params > -1)
+            path = path.substring(0, params);
 
+        Method m = routes.get(path + request.getMethod());
         if (m == null)
             return null;
 
