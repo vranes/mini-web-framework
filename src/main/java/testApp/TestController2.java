@@ -3,7 +3,6 @@ package testApp;
 import framework.annotations.di.Autowired;
 import framework.annotations.di.Controller;
 import framework.annotations.di.Qualifier;
-import framework.annotations.di.Service;
 import framework.annotations.http.Get;
 import framework.annotations.http.Path;
 import framework.annotations.http.Post;
@@ -14,7 +13,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 @Controller
-public class TestController {
+public class TestController2 {
 
     @Autowired
     private SingletonBeanClass singletonBeanClass;
@@ -28,23 +27,23 @@ public class TestController {
     @Qualifier("test")
     private TestInterface implementationClass;
 
-    @Path("/")
+    @Path("/test")
     @Get
-    public Response getRoot(){
+    public Response getTest(){
         Map<String, Object> responseMap = new HashMap<>();
-        responseMap.put("controller", "1");
-        responseMap.put("route_location", "/");
+        responseMap.put("controller", "2");
+        responseMap.put("route_location", "/test");
         responseMap.put("route_method", "get");
         Response response = new JsonResponse(responseMap);
         return response;
     }
 
-    @Path("/")
+    @Path("/test")
     @Post
-    public Response postRoot(HashMap<String, String> parameters){
+    public Response postTest(HashMap<String, String> parameters){
         Map<String, Object> responseMap = new HashMap<>();
-        responseMap.put("controller", "1");
-        responseMap.put("route_location", "/");
+        responseMap.put("controller", "2");
+        responseMap.put("route_location", "/test");
         responseMap.put("route_method", "get");
         responseMap.put("parameters", parameters);
         Response response = new JsonResponse(responseMap);

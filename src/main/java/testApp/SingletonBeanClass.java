@@ -7,7 +7,7 @@ public class SingletonBeanClass {
     public String value;
 
     public SingletonBeanClass(){
-        value = "Singleton Bean Class Initialized";
-        System.out.println(value);
+        value = "This is a Singleton Bean Class";
+//        System.out.println(value);
     }
 }

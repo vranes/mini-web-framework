@@ -53,11 +53,6 @@ public class DIEngine {
                         DependencyContainer.getInstance().mapImpl(interfaceClass, qualifier.value(), cl);
                     }
                 }
-                Bean bean  = (Bean)cl.getAnnotation(Bean.class);
-                if (cl.isAnnotationPresent(Service.class) || (bean != null && bean.scope().equals(Scope.SINGLETON))){
-                    Object instance = cl.getDeclaredConstructor().newInstance();
-                    singletonClassToInstance.put(cl, instance);
-                }
             }
         }
         processControlers();
@@ -95,7 +90,7 @@ public class DIEngine {
 
     private void processFields(Class cl, Object instance) throws NoSuchMethodException, IllegalAccessException, InvocationTargetException, InstantiationException {
         for (Field f: cl.getDeclaredFields()){
-            System.out.println("0");
+
             if (f.isAnnotationPresent(Autowired.class)){
 
                 Object fieldInstance = null;
@@ -108,16 +103,22 @@ public class DIEngine {
                     }
                     fieldClass = DependencyContainer.getInstance().getImpl(f.getType(), qualifier.value());
                 }
-
                 Bean bean  = (Bean)fieldClass.getAnnotation(Bean.class);
                 Service service = (Service) fieldClass.getAnnotation(Service.class);
                 Component component = (Component)fieldClass.getAnnotation(Component.class);
+                boolean initialized = false;
 
                 if(component != null || (bean != null && bean.scope().equals(Scope.PROTOTYPE))){
+                    initialized = true;
                     fieldInstance = fieldClass.getDeclaredConstructor().newInstance();
                 }
                 else if (service != null || (bean != null && bean.scope().equals(Scope.SINGLETON))){
                     fieldInstance = singletonClassToInstance.get(fieldClass);
+                    if (fieldInstance == null){
+                        initialized = true;
+                        fieldInstance = fieldClass.getDeclaredConstructor().newInstance();
+                        singletonClassToInstance.put(fieldClass, fieldInstance);
+                    }
                 }
                 else{
                     throw new RuntimeException("Field annotated with Autowired must be of class with a Bean/Service/Component annotation.");
@@ -127,7 +128,7 @@ public class DIEngine {
                 f.setAccessible(true);
                 f.set(instance, fieldInstance);
 
-                if (f.getAnnotation(Autowired.class).verbose()){
+                if (f.getAnnotation(Autowired.class).verbose() && initialized){
                     System.out.println("Initialized " + f.getType() + " " + f.getName() + " in " + cl.getName()
                             + " on " + java.util.Calendar.getInstance().getTime() + " with " + fieldInstance);
                 }

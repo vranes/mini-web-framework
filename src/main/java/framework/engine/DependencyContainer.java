@@ -20,16 +20,15 @@ public class DependencyContainer {
         if (qualifierToImpl.containsKey(qualifier)){
             throw new RuntimeException("Qualifier value " + qualifier + " already exists for interface " + interface_.getName());
         }
-
         qualifierToImpl.put(qualifier, implementation);
-      //  interfaceToImpls.put(interface_, qualifierToImpl);
+        interfaceToImpls.put(interface_, qualifierToImpl);
     }
 
     public Class getImpl(Class interface_, String qualifier){
         HashMap<String, Class> qualifierToImpl = interfaceToImpls.get(interface_);
 
         if (qualifierToImpl == null){
-            throw new RuntimeException("No class implementation of " + interface_.getName() + " interface found for injection.");
+            throw new RuntimeException("No registered implementations of interface " + interface_.getName() + " found for injection.");
         }
 
         Class cl = qualifierToImpl.get(qualifier);

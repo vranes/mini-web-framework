@@ -7,7 +7,7 @@ public class ServiceClass {
     public String value;
 
     public ServiceClass(){
-        value = "Service Class Initialized";
-        System.out.println(value);
+        value = "This is a Service Class";
+//        System.out.println(value);
     }
 }

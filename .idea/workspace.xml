@@ -2,12 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5bb94221-2754-4db2-8b15-3273514ffc69" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/testApp/ComponentClass.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/testApp/PrototypeBeanClass.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/testApp/ServiceClass.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/testApp/SingletonBeanClass.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/testApp/ImplementationClass.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/testApp/TestController2.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/testApp/TestInterface.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/framework/engine/DIEngine.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/framework/engine/DIEngine.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/framework/engine/DependencyContainer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/framework/engine/DependencyContainer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/testApp/ComponentClass.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/testApp/ComponentClass.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/testApp/PrototypeBeanClass.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/testApp/PrototypeBeanClass.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/testApp/ServiceClass.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/testApp/ServiceClass.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/testApp/SingletonBeanClass.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/testApp/SingletonBeanClass.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/testApp/TestController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/testApp/TestController.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -20,6 +24,7 @@
       <list>
         <option value="AnnotationType" />
         <option value="Enum" />
+        <option value="Interface" />
         <option value="Class" />
       </list>
     </option>
@@ -42,6 +47,9 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="testApp" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\vrane\OneDrive\Documents\RAF\Projekti\mini-web-framework\src\main\java" />
     </key>
@@ -93,7 +101,7 @@
       <workItem from="1636287818761" duration="1798000" />
       <workItem from="1636458448869" duration="3000" />
       <workItem from="1636458528717" duration="26284000" />
-      <workItem from="1636816009684" duration="22947000" />
+      <workItem from="1636816009684" duration="26120000" />
     </task>
     <servers />
   </component>
@@ -113,22 +121,22 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="793" y="280" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1636288780560" />
-    <state width="1878" height="314" key="GridCell.Tab.0.bottom" timestamp="1636891315956">
+    <state width="1878" height="220" key="GridCell.Tab.0.bottom" timestamp="1636900982910">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1878" height="314" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1636891315956" />
-    <state width="1878" height="314" key="GridCell.Tab.0.center" timestamp="1636891315956">
+    <state width="1878" height="220" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1636900982910" />
+    <state width="1878" height="220" key="GridCell.Tab.0.center" timestamp="1636900982910">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1878" height="314" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1636891315956" />
-    <state width="1878" height="314" key="GridCell.Tab.0.left" timestamp="1636891315956">
+    <state width="1878" height="220" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1636900982910" />
+    <state width="1878" height="220" key="GridCell.Tab.0.left" timestamp="1636900982910">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1878" height="314" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1636891315956" />
-    <state width="1878" height="314" key="GridCell.Tab.0.right" timestamp="1636891315956">
+    <state width="1878" height="220" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1636900982910" />
+    <state width="1878" height="220" key="GridCell.Tab.0.right" timestamp="1636900982910">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1878" height="314" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1636891315956" />
+    <state width="1878" height="220" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1636900982910" />
     <state x="624" y="227" width="670" height="158" key="search.everywhere.popup" timestamp="1636841829415">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

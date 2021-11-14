@@ -8,7 +8,7 @@ public class PrototypeBeanClass {
     public String value;
 
     public PrototypeBeanClass(){
-        value = "Prototype Bean Class Initialized";
-        System.out.println(value);
+        value = "Prototype Bean Class here!";
+//        System.out.println(value);
     }
 }
