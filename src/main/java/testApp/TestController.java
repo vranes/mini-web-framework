@@ -1,6 +1,8 @@
 package testApp;
 
+import framework.annotations.di.Autowired;
 import framework.annotations.di.Controller;
+import framework.annotations.di.Service;
 import framework.annotations.http.Get;
 import framework.annotations.http.Path;
 import framework.annotations.http.Post;
@@ -12,6 +14,15 @@ import java.util.Map;
 
 @Controller
 public class TestController {
+
+    @Autowired
+    private SingletonBeanClass singletonBeanClass;
+    @Autowired
+    private PrototypeBeanClass prototypeBeanClass;
+    @Autowired
+    private ServiceClass serviceClass;
+    @Autowired
+    private ComponentClass componentClass;
 
     @Path("/")
     @Get

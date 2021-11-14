@@ -94,18 +94,19 @@ public class DIEngine {
     }
 
     private void processFields(Class cl, Object instance) throws NoSuchMethodException, IllegalAccessException, InvocationTargetException, InstantiationException {
-        for (Field f: cl.getFields()){
+        for (Field f: cl.getDeclaredFields()){
+            System.out.println("0");
             if (f.isAnnotationPresent(Autowired.class)){
 
                 Object fieldInstance = null;
-                Class fieldClass = f.getClass();
+                Class fieldClass = f.getType();
 
                 if (f.getType().isInterface()){
                     Qualifier qualifier = f.getAnnotation(Qualifier.class);
                     if (qualifier == null) {
                         throw new RuntimeException("Interface annotated with Autowired must also have the Qualifier annotation.");
                     }
-                    fieldClass = DependencyContainer.getInstance().getImpl(f.getClass(), qualifier.value());
+                    fieldClass = DependencyContainer.getInstance().getImpl(f.getType(), qualifier.value());
                 }
 
                 Bean bean  = (Bean)fieldClass.getAnnotation(Bean.class);
