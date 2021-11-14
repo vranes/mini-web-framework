@@ -2,13 +2,11 @@ package framework.engine;
 
 import framework.request.Request;
 import framework.request.enums.HttpMethod;
-import framework.response.JsonResponse;
 import framework.response.Response;
 
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.util.HashMap;
-import java.util.Map;
 
 public class Router {
     private static Router instance = null;
@@ -37,7 +35,7 @@ public class Router {
         if (m == null)
             return null;
 
-        Object instance = Engine.getInstance().getInstanceByMethod(m);
+        Object instance = DIEngine.getInstance().getInstanceByMethod(m);
             // TODO parameters?
 
         if (m.getParameterCount() > 0)

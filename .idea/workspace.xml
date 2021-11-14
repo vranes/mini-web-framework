@@ -2,10 +2,19 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5bb94221-2754-4db2-8b15-3273514ffc69" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/framework/annotations/di/Autowired.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/framework/annotations/di/Bean.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/framework/annotations/di/Component.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/framework/annotations/di/Qualifier.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/framework/annotations/di/Scope.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/framework/annotations/di/Service.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/framework/engine/DependencyContainer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/framework/engine/AnnotationManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/framework/engine/AnnotationManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/framework/annotations/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/framework/annotations/di/Controller.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/framework/engine/AnnotationManager.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/framework/engine/Engine.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/framework/engine/DIEngine.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/framework/engine/Router.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/framework/engine/Router.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/framework/server/ServerThread.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/framework/server/ServerThread.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/framework/server/Server.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/framework/server/Server.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/testApp/TestController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/testApp/TestController.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -17,6 +26,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="AnnotationType" />
+        <option value="Enum" />
         <option value="Class" />
       </list>
     </option>
@@ -90,7 +100,7 @@
       <workItem from="1636287818761" duration="1798000" />
       <workItem from="1636458448869" duration="3000" />
       <workItem from="1636458528717" duration="26284000" />
-      <workItem from="1636816009684" duration="10440000" />
+      <workItem from="1636816009684" duration="19860000" />
     </task>
     <servers />
   </component>
@@ -102,10 +112,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="565" y="446" key="#com.intellij.refactoring.move.MoveHandler.SelectRefactoringDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1636583188350" />
-    <state x="563" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1636584424939">
+    <state x="538" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1636834432549">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="563" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1636584424939" />
+    <state x="538" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1636834432549" />
     <state x="793" y="280" key="FileChooserDialogImpl" timestamp="1636288780560">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -126,9 +136,9 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1878" height="314" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1636829967348" />
-    <state x="623" y="226" width="670" height="58" key="search.everywhere.popup" timestamp="1636490083073">
+    <state x="624" y="227" width="670" height="158" key="search.everywhere.popup" timestamp="1636841829415">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="623" y="226" width="670" height="58" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1636490083073" />
+    <state x="624" y="227" width="670" height="158" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1636841829415" />
   </component>
 </project>

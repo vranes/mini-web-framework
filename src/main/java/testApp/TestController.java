@@ -1,6 +1,6 @@
 package testApp;
 
-import framework.annotations.Controller;
+import framework.annotations.di.Controller;
 import framework.annotations.http.Get;
 import framework.annotations.http.Path;
 import framework.annotations.http.Post;
