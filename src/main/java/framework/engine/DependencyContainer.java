@@ -22,7 +22,7 @@ public class DependencyContainer {
         }
 
         qualifierToImpl.put(qualifier, implementation);
-      //  interfaceToImpls.put(interface_, qualifierToImpl);  // TODO  redundant?
+      //  interfaceToImpls.put(interface_, qualifierToImpl);
     }
 
     public Class getImpl(Class interface_, String qualifier){

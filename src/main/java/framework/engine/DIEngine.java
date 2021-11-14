@@ -6,7 +6,6 @@ import framework.annotations.http.Path;
 import framework.annotations.http.Post;
 
 import java.io.IOException;
-import java.lang.annotation.Annotation;
 import java.lang.reflect.Field;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
@@ -27,6 +26,7 @@ public class DIEngine {
     private final Set<Object> controllerInstances = new HashSet<>();
     private final Set<Class<?>> controllerClasses = new HashSet<>();
     private final HashMap<Method, Object> methodToInstance = new HashMap<>();
+    private final HashMap<Class, Object> singletonClassToInstance = new HashMap<>();
 
     public static DIEngine getInstance(){
         if (instance == null){
@@ -42,25 +42,33 @@ public class DIEngine {
     }
 
     public void proccessClasses(ArrayList<Class> classes) throws NoSuchMethodException, InstantiationException, IllegalAccessException, InvocationTargetException, ClassNotFoundException {
-        for (Class cl: classes)
-            processClass(cl);
-    }
-
-    private void processClass(Class cl) throws NoSuchMethodException, IllegalAccessException, InvocationTargetException, InstantiationException {
-        if (!cl.isInterface() && !cl.isEnum()) {
-            if(cl.isAnnotationPresent(Controller.class)){
-                controllerClasses.add(cl);
-                Object instance = cl.getDeclaredConstructor().newInstance();
-                controllerInstances.add(instance);
-                processMethods(cl, instance);
-                processFields(cl, instance);
-            }
-            if (cl.isAnnotationPresent(Qualifier.class)){
-                Qualifier qualifier = (Qualifier)cl.getAnnotation(Qualifier.class);
-                for (Class interfaceClass: cl.getInterfaces()){
-                    DependencyContainer.getInstance().mapImpl(interfaceClass, qualifier.value(), cl);
+        for (Class cl: classes){
+            if (!cl.isInterface() && !cl.isEnum()) {
+                if(cl.isAnnotationPresent(Controller.class)){
+                    controllerClasses.add(cl);
+                }
+                if (cl.isAnnotationPresent(Qualifier.class)){
+                    Qualifier qualifier = (Qualifier)cl.getAnnotation(Qualifier.class);
+                    for (Class interfaceClass: cl.getInterfaces()){
+                        DependencyContainer.getInstance().mapImpl(interfaceClass, qualifier.value(), cl);
+                    }
+                }
+                Bean bean  = (Bean)cl.getAnnotation(Bean.class);
+                if (cl.isAnnotationPresent(Service.class) || (bean != null && bean.scope().equals(Scope.SINGLETON))){
+                    Object instance = cl.getDeclaredConstructor().newInstance();
+                    singletonClassToInstance.put(cl, instance);
                 }
             }
+        }
+        processControlers();
+    }
+
+    private void processControlers() throws NoSuchMethodException, IllegalAccessException, InvocationTargetException, InstantiationException {
+        for (Class cl: controllerClasses){
+            Object instance = cl.getDeclaredConstructor().newInstance();
+            controllerInstances.add(instance);
+            processMethods(cl, instance);
+            processFields(cl, instance);
         }
     }
 
@@ -108,7 +116,7 @@ public class DIEngine {
                     fieldInstance = fieldClass.getDeclaredConstructor().newInstance();
                 }
                 else if (service != null || (bean != null && bean.scope().equals(Scope.SINGLETON))){
-                    // TODO
+                    fieldInstance = singletonClassToInstance.get(fieldClass);
                 }
                 else{
                     throw new RuntimeException("Field annotated with Autowired must be of class with a Bean/Service/Component annotation.");

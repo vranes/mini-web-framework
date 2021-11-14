@@ -2,20 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5bb94221-2754-4db2-8b15-3273514ffc69" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/framework/annotations/di/Autowired.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/framework/annotations/di/Bean.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/framework/annotations/di/Component.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/framework/annotations/di/Qualifier.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/framework/annotations/di/Scope.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/framework/annotations/di/Service.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/framework/engine/DependencyContainer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/framework/annotations/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/framework/annotations/di/Controller.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/framework/engine/AnnotationManager.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/framework/engine/Engine.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/framework/engine/DIEngine.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/framework/engine/Router.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/framework/engine/Router.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/framework/server/Server.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/framework/server/Server.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/testApp/TestController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/testApp/TestController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/framework/engine/DIEngine.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/framework/engine/DIEngine.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/framework/engine/DependencyContainer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/framework/engine/DependencyContainer.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -100,7 +89,7 @@
       <workItem from="1636287818761" duration="1798000" />
       <workItem from="1636458448869" duration="3000" />
       <workItem from="1636458528717" duration="26284000" />
-      <workItem from="1636816009684" duration="19860000" />
+      <workItem from="1636816009684" duration="21027000" />
     </task>
     <servers />
   </component>
